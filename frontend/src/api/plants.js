@@ -1,6 +1,6 @@
-import api from "./axios";
+import api from "./axios.js";
 
-export const fetchPlants = async () => {
+export const fetchPlantsClient = async () => {
   const { data } = await api.get("/plants");
   return data.data;
 };

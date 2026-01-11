@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
+import { fetchPlantsClient } from "../../api/plants.js";
 
-import { fetchPlants } from "../../api/plants.js";
 import ProductCard from "../products/ProductCard";
 
 const BestSeller = () => {
@@ -14,7 +14,7 @@ const BestSeller = () => {
   useEffect(() => {
     const getPlants = async () => {
       try {
-        const data = await fetchPlants();
+        const data = await fetchPlantsClient();
         setPlants(data.slice(0, 3));
       } catch (error) {
         setError("Failed to load plants!");
@@ -28,8 +28,13 @@ const BestSeller = () => {
   }, []);
 
   return (
-    <section className="container mx-auto px-2 sm:px-4 mb-2 sm:mb-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_3fr] gap-4 items-center">
+    <section className="container mx-auto px-2 sm:px-4 mb-2 sm:mb-4 md:mb-8 lg:md-12">
+      <motion.div
+        initial={{ opacity: 0, y: -25 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_3fr] gap-4 items-center"
+      >
         <div>
           <h2 className="text-2xl font-bold mb-3">Best Selling Plants</h2>
           <p className="text-stone-500 mb-6">
@@ -47,7 +52,7 @@ const BestSeller = () => {
           className={`${
             error || loading
               ? "w-full flex justify-center"
-              : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+              : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
           }`}
         >
           {loading ? (
@@ -57,7 +62,7 @@ const BestSeller = () => {
           )}
           {error && <p className="text-red-500 font-medium">{error}</p>}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

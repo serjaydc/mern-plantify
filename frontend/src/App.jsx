@@ -7,6 +7,7 @@ import MainLayout from "./Layout/MainLayout";
 import ProfilePage from "./pages/ProfilePage";
 import ContactPage from "./pages/ContactPage";
 import SingleProduct from "./pages/SingleProduct";
+import FavoritePage from "./pages/FavoritePage";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/products/:id" element={<SingleProduct />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/favorite" element={<FavoritePage />} />
       </Route>
     </Routes>
   );

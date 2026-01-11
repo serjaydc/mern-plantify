@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { LuUser, LuShoppingCart } from "react-icons/lu";
-import { FaBarsStaggered } from "react-icons/fa6";
+import { LuUser } from "react-icons/lu";
+import { FaHeart } from "react-icons/fa6";
 
 import { motion } from "motion/react";
 
@@ -40,9 +40,12 @@ const Header = () => {
             </nav>
 
             <div className="flex items-center gap-4 sm:gap-6">
-              <button className="hover:text-stone-950 transition-colors cursor-pointer">
-                <LuShoppingCart className="size-5" />
-              </button>
+              <Link
+                to="/favorite"
+                className="hover:text-stone-950 transition-colors cursor-pointer"
+              >
+                <FaHeart className="size-5" />
+              </Link>
 
               <Link
                 to="/profile"
