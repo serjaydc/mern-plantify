@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import hero1 from "/public/hero1.png";
-import hero2 from "/public/hero2.png";
+import hero1 from "/hero1.png";
+import hero2 from "/hero2.png";
 import { motion } from "motion/react";
 
 const Hero = () => {

@@ -1,9 +1,9 @@
 import React from "react";
-import Natural from "/public/Natural.png";
-import Greenary from "/public/Greenary.png";
-import Nursery from "/public/Nursery.png";
-import PlantGuide from "/public/PlantGuide.png";
-import PlantInfo from "/public/PlantInfo.png";
+import Natural from "/Natural.png";
+import Greenary from "/Greenary.png";
+import Nursery from "/Nursery.png";
+import PlantGuide from "/PlantGuide.png";
+import PlantInfo from "/PlantInfo.png";
 import { motion } from "motion/react";
 
 const COMPANIES = [Natural, Greenary, PlantInfo, Nursery, PlantGuide];

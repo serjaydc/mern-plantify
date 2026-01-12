@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import AboutImage from "/public/about.png";
+import AboutImage from "/about.png";
 
 const About = () => {
   return (
