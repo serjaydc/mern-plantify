@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { LuUser } from "react-icons/lu";
-import { FaHeart } from "react-icons/fa6";
+import { LuHeart, LuUser } from "react-icons/lu";
+
+import Logo from "/public/logo.png";
 
 import { motion } from "motion/react";
 
@@ -9,48 +10,26 @@ const Header = () => {
     <motion.header
       initial={{ opacity: 0, y: -25 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.5 }}
+      className="shadow-md mb-10"
     >
-      <div className="container mx-auto px-2 sm:px-4">
-        <div className="flex items-center h-20 gap-2 sm:gap-4 md:gap-8 lg:gap-10">
-          {/* Logo */}
-          <h2 className="text-2xl font-bold tracking-wider">
-            <span className="text-emerald-600">Plant</span>ify
-          </h2>
-
-          {/* Nav + CTA */}
-          <div className="flex flex-1 justify-between items-center text-stone-700">
-            <nav className="flex items-center gap-4 sm:gap-6">
-              <Link to="/" className="hover:text-stone-950 transition-colors">
-                Home
-              </Link>
-              <Link
-                to="/products"
-                className="hover:text-stone-950 transition-colors"
-              >
-                Products
-              </Link>
-
-              <Link
-                to="/contact"
-                className="hover:text-stone-950 transition-colors"
-              >
-                Contact
-              </Link>
+      <div className="container mx-auto px-2 ">
+        <div className="h-20 flex items-center justify-between">
+          <div>
+            <img src={Logo} alt="Logo" />
+          </div>
+          <div className="flex items-center gap-16">
+            <nav className="hidden md:flex items-center gap-8">
+              <Link to="/">Home</Link>
+              <Link to="/about">About</Link>
+              <Link to="/collection">Collection</Link>
+              <Link to="/contact">Contact</Link>
             </nav>
-
-            <div className="flex items-center gap-4 sm:gap-6">
-              <Link
-                to="/favorite"
-                className="hover:text-stone-950 transition-colors cursor-pointer"
-              >
-                <FaHeart className="size-5" />
+            <div className="flex items-center gap-4">
+              <Link to="/favourite">
+                <LuHeart className="size-5" />
               </Link>
-
-              <Link
-                to="/profile"
-                className="hover:text-stone-950 transition-colors "
-              >
+              <Link to="/profile">
                 <LuUser className="size-5" />
               </Link>
             </div>

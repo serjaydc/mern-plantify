@@ -1,79 +1,64 @@
-import heroImg from "/public/hero.png";
-import { FaMagnifyingGlass } from "react-icons/fa6";
+import React from "react";
+import { Link } from "react-router-dom";
+import hero1 from "/public/hero1.png";
+import hero2 from "/public/hero2.png";
 import { motion } from "motion/react";
 
 const Hero = () => {
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="container mx-auto px-2 sm:px-4 mb-2 sm:mb-4 md:mb-8 lg:md-12"
-    >
-      <div className="bg-linear-to-r from-cyan-200 via-[#C1DCDC] to-blue-200 p-12 rounded-2xl">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          {/* Left */}
-          <motion.div
-            initial={{ x: -50 }}
-            animate={{ x: 0 }}
-            transition={{ duration: 0.3 }}
-            className="flex-1 max-w-md"
-          >
-            <h1 className="text-6xl font-bold mb-6">Buy your dream plants</h1>
-            <div className="flex items-center gap-10 font-medium mb-6">
-              <div>
-                <span className="text-2xl">50+</span>
-                <p className="">Plant Species</p>
-              </div>
-              <div>
-                <span className="text-2xl">100+</span>
-                <p>Customers</p>
-              </div>
-            </div>
-            <div className="flex items-center w-full relative">
-              <input
-                type="text"
-                placeholder="What are you looking for?"
-                className="bg-white p-3 w-full rounded-xl outline-none hover:shadow-md transition-all"
-              />
-              <div className="absolute right-2">
-                <button
-                  type="submit"
-                  className="p-3 bg-emerald-200 rounded-xl cursor-pointer"
-                >
-                  <FaMagnifyingGlass className="size-4" />
-                </button>
-              </div>
-            </div>
-          </motion.div>
-          {/* Right */}
-          <motion.div
-            initial={{ x: 50 }}
-            animate={{ x: 0 }}
-            transition={{ duration: 0.3 }}
-            className="flex-1 max-w-md h-100"
-          >
-            {/* Outer wrapper */}
-            <div className="relative h-full w-full">
-              {/* Rotated gradient background */}
-              <div
-                className="absolute inset-0 bg-linear-to-br from-slate-900/90 via-stone-800/90 to-gray-900/90 backdrop-blur-sm 
-                      rounded-2xl"
-              />
+    <section className="container mx-auto px-2 mb-20">
+      <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
+        {/* Left (Text) */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full lg:w-1/2 text-center lg:text-left"
+        >
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-semibold mb-6 leading-tight">
+            Perfect plants on sale for your{" "}
+            <span className="text-emerald-700">interiors</span>
+          </h1>
 
-              {/* Image wrapper (counter-transform) */}
-              <div className="relative h-full w-full rounded-2xl overflow-hidden">
-                <img
-                  src={heroImg}
-                  alt="Plant Image"
-                  className="h-full w-full object-contain"
-                />
-              </div>
-            </div>
-          </motion.div>
-        </div>
+          <p className="mb-4 text-sm sm:text-base text-gray-600 max-w-xl mx-auto lg:mx-0 leading-7">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis
+            eleifend orci nunc, blandit massa, vitae. Quis in vitae est eu
+            pulvinar sed. Netus lorem sit turpis tristique pharetra sit. Egestas
+            felis feugiat augue auctor quam nisl vel sit sagittis.
+          </p>
+
+          <Link
+            to="/collection"
+            className="inline-block bg-stone-950 text-white py-4 px-8 rounded-lg hover:bg-stone-800 transition"
+          >
+            Shop Collection
+          </Link>
+        </motion.div>
+
+        {/* Right (Images) */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="w-full lg:w-1/2 flex justify-center lg:justify-end gap-6"
+        >
+          <div className="w-60 sm:w-72 lg:w-80 aspect-3/4">
+            <img
+              src={hero1}
+              alt="Plant"
+              className="w-full h-full rounded-xl object-cover"
+            />
+          </div>
+          <div className="w-60 sm:w-72 lg:w-80 aspect-3/4 mb-15 mt-5">
+            <img
+              src={hero2}
+              alt="Plant"
+              className="w-full h-full rounded-xl object-cover"
+            />
+          </div>
+        </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

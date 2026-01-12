@@ -1,18 +1,18 @@
 import React from "react";
 import Hero from "../components/home/Hero";
-import BestSeller from "../components/home/BestSeller";
+import WorkWith from "../components/home/WorkWith";
 import About from "../components/home/About";
-import Categories from "../components/home/Categories";
-import Testimonals from "../components/home/Testimonals";
+import FreshArrivals from "../components/home/FreshArrivals";
+import PopularItems from "../components/home/PopularItems";
 
 const HomePage = () => {
   return (
     <>
       <Hero />
-      <BestSeller />
+      <WorkWith />
       <About />
-      <Categories />
-      <Testimonals />
+      <FreshArrivals />
+      <PopularItems />
     </>
   );
 };
