@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { LuHeart, LuUser } from "react-icons/lu";
 
-import Logo from "/public/logo.png";
+import Logo from "/logo.png";
 
 import { motion } from "motion/react";
 
